@@ -1,0 +1,19 @@
+  <div class="role <%=dom_class_first(role, role.project.roles) %> <%=cycle('odd','even') %>">
+	<div class="person-name">
+		<%= role.person.name %> 
+	</div>
+	<div class="role-title">
+		<%= role.title %> 
+	</div>
+	<div class="status-title <%= dom_id(role.status) %>">
+		<%= role.status.title %> 
+	</div>
+	<div class="time" datetime="<%= role.updated_at %> ">
+		<%= role.updated_at.to_formatted_s(:short) %> 
+	</div>
+	
+	<%= link_to_icon 'edit', edit_project_role_path(role.project,role) %>
+	<%= link_to_icon 'destroy', project_role_path(role.project,role), 
+:confirm => "Do you want to delete '#{role.person.name},#{role.title}'?", 
+:method => :delete	%>
+  </div>

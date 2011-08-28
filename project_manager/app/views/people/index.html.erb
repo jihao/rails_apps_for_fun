@@ -1,0 +1,9 @@
+ <h1>People</h1>
+ <%= params[:name] %>
+ 
+ <ul>
+ <% @people.each do |person|%>
+	<li><%= link_to person,person_path(person) %> </li>
+ <% end %>
+ </ul>
+ 
