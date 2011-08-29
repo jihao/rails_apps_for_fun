@@ -1,0 +1,17 @@
+<%= form_for @survey do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <% f.fields_for :questions do |builder| %>
+	<p>
+		<%= builder.label :content, "Question" %><br />
+		<%= builder.text_field :content %>
+		<%= builder.check_box :_destroy %>
+		<%= builder.label :_destroy, "Remove Question" %><br />
+	</p>
+  <%end%>
+  
+  <p><%= f.submit %></p>
+<% end %>
