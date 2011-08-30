@@ -5,13 +5,8 @@
     <%= f.text_field :name %>
   </p>
   <% f.fields_for :questions do |builder| %>
-	<p>
-		<%= builder.label :content, "Question" %><br />
-		<%= builder.text_field :content %>
-		<%= builder.check_box :_destroy %>
-		<%= builder.label :_destroy, "Remove Question" %><br />
-	</p>
+	<%= render 'question_form', :f=>builder %>
   <%end%>
-  
+  <p><%= link_to_add_fields "Add Question", f, :questions %></p>
   <p><%= f.submit %></p>
 <% end %>

@@ -1,0 +1,13 @@
+<div class="fields">
+<p class="question ">
+	<%= f.label :content, "Question" %><br />
+	<%= f.text_field :content %>
+	<%= f.hidden_field :_destroy %>
+	<%= link_to_function "remove","remove_fields(this)" %><br />
+</p>
+
+  <% f.fields_for :answers do |builder| %>
+	<%= render 'answer_form', :f=>builder %>
+  <%end%>
+  <p><%= link_to_add_fields "Add Answer", f, :answers %></p>
+</div>
