@@ -1,0 +1,27 @@
+<%= semantic_form_for(@animal) do |f| %>
+  <% if @animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+
+      <ul>
+      <% @animal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% f.inputs do %>
+    <%= f.input :name,:hint => "Use the owner's name if none is provided" %>
+    <%= f.input :born_at, :start_year => 2000 %>
+    <%= f.input :category, :include_blank => false %>
+    <%= f.input :female, :as => :radio, 
+		:label => "Gender", 
+		:collection => [["Male", false], ["Female", true]] %>
+	
+	<%= f.input :problems, :as=>:check_boxes, :required=>false %>
+  <% end %>
+  
+	<%= f.buttons %>
+  
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  category_id: 1
+  born_at: 2011-08-30
+  female: false
+  catgory: 
+
+two:
+  name: MyString
+  category_id: 1
+  born_at: 2011-08-30
+  female: false
+  catgory: 
