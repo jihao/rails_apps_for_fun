@@ -1,0 +1,28 @@
+﻿<div class="user_nav">
+<% if user_signed_in? -%> <!-- Provided by devise -->
+		<div style="float:right">
+		  <%= current_user.email %> |
+		  <%= link_to '用户信息', edit_user_registration_path %> |
+		  <%= link_to '退出登录', destroy_user_session_path, :method => :delete %> |
+		  <%= link_to image_tag("tsina_24_24.png"), '/auth/tsina', :title=> "连接新浪微薄" %>
+		</div>
+		<% if @weibo_user %>
+		<div style="clear:both"></div>
+		<div style="float:right">
+			<p>已连接新浪微薄:<p/>
+			<%= link_to image_tag(@weibo_user['profile_image_url']), "http://weibo.com/#{@weibo_user['id']}" %>
+			<%= link_to @weibo_user['screen_name'], "http://weibo.com/#{@weibo_user['id']}" %>
+			关注:<%= @weibo_user['followers_count'] %>
+			粉丝:<%= @weibo_user['friends_count'] %>
+			微薄:<%= @weibo_user['statuses_count'] %>
+			收藏:<%= @weibo_user['favourites_count'] %>
+		</div>	
+		<% end %>
+<% end -%>
+<% unless user_signed_in? -%>
+	<div style="float:right">
+	  <%= link_to '注册', new_user_registration_path %> |
+	  <%= link_to '登录', new_user_session_path %>
+	</div>
+<% end -%>
+</div>
