@@ -1,0 +1,16 @@
+﻿<div class="user_nav">
+<% if user_signed_in? -%> <!-- Provided by devise -->
+		<div style="float:right">
+		  <%= current_user.email %> |
+		  <%= link_to '用户信息', edit_user_registration_path %> |
+		  <%= link_to '退出登录', destroy_user_session_path, :method => :delete %>
+		</div>
+		
+<% end -%>
+<% unless user_signed_in? -%>
+	<div style="float:right">
+	  <%= link_to '注册', new_user_registration_path %> |
+	  <%= link_to '登录', new_user_session_path %>
+	</div>
+<% end -%>
+</div>

@@ -1,0 +1,17 @@
+.relative {
+	position: relative;
+}
+.center {
+	width: 500px;
+    /*height: 500px;*/
+    background-color: #EAF3FA;
+    display: block;
+    margin: 0 auto;
+	padding: 20px 20px;
+}
+
+.border-nice {
+	border: 1px solid #CCCCCC;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.125);
+}
