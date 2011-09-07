@@ -9,24 +9,33 @@
   </div>
 </div>
 
-  <div class="clearfix"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><div class="input">
-  <%= f.password_field :password %></div>
+  <div class="clearfix"><%= f.label :password %> <div class="input">
+  <%= f.password_field :password %><br/>
+  <span><i>(leave blank if you don't want to change it)</i></span>
+  
+  </div>
 </div>
 
   <div class="clearfix"><%= f.label :password_confirmation %><div class="input">
   <%= f.password_field :password_confirmation %></div>
 </div>
 
-  <div class="clearfix"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><div class="input">
-  <%= f.password_field :current_password %></div>
+  <div class="clearfix"><%= f.label :current_password %> <div class="input">
+  <%= f.password_field :current_password %>
+  <br/>
+  <span><i>(we need your current password to confirm your changes)</i></span>
+  </div>
 </div>
 
-  <div class="clearfix"><%= f.submit "Update" %></div>
+  <div class="clearfix"><div class="input"><%= f.submit "Update", :class=>"btn primary" %></div></div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<div class="clearfix">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.
-</div>
-
+<ul class="pills">
+<li><%= link_to "Unhappy? Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.
+</li>
+<li>
 <%= link_to "Back", :back %>
+</li>
+</ul>
