@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyString
+  postcode: MyString
+  client: 
+
+two:
+  description: MyString
+  postcode: MyString
+  client: 
